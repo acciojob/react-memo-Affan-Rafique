@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 /**
  * Cypress expects:
- *  - an <input> and an "Add Skill" button
- *  - clicking adds a list item with the input text
+ *  - an <input> and a button ("Add Skill")
+ *  - clicking adds an li with the entered text
  */
 const SkillList = React.memo(function SkillList({ skills }) {
   return (
@@ -22,14 +22,15 @@ export default function ReactMemo() {
   const addSkill = () => {
     const v = text.trim();
     if (!v) return;
-    setSkills((s) => [...s, v]);
+    setSkills((arr) => [...arr, v]);
     setText("");
   };
 
   return (
-    <div className="card" id="reactmemo-card" style={{ marginTop: 12 }}>
+    <section id="reactmemo-card" className="card">
       <h2>React Memo testing</h2>
 
+      {/* The input/button Cypress searches for */}
       <input
         type="text"
         placeholder="Enter a skill"
@@ -41,6 +42,6 @@ export default function ReactMemo() {
       </button>
 
       <SkillList skills={skills} />
-    </div>
+    </section>
   );
 }
