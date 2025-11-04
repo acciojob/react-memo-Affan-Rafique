@@ -1,6 +1,6 @@
 import React from "react";
-import UseMemo from "./UseMemo";
-import ReactMemo from "./ReactMemo";
+import UseMemo from "./UseMemo";     // NOTE: exact case
+import ReactMemo from "./ReactMemo"; // NOTE: exact case
 import "./styles.css";
 
 export default function App() {
