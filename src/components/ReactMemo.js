@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-/**
- * Cypress expects:
- *  - an <input> and a button ("Add Skill")
- *  - clicking adds an li with the entered text
- */
+// ✅ React.memo used for performance
 const SkillList = React.memo(function SkillList({ skills }) {
   return (
     <ul id="skill-list" data-test-id="skill-list">
@@ -30,13 +26,15 @@ export default function ReactMemo() {
     <section id="reactmemo-card" className="card">
       <h2>React Memo testing</h2>
 
-      {/* The input/button Cypress searches for */}
+      {/* Cypress expects an <input> here */}
       <input
         type="text"
         placeholder="Enter a skill"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
+
+      {/* Cypress expects an <Add Skill> button */}
       <button onClick={addSkill} style={{ marginLeft: 8 }}>
         Add Skill
       </button>
