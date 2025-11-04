@@ -1,7 +1,6 @@
 import React from "react";
-import UseMemo from "./UseMemo";       // ✅ relative to components/
-import ReactMemo from "./ReactMemo";   // ✅ relative to components/
-import "../styles.css";                // ✅ go up one level for CSS
+import UseMemo from "./UseMemo";
+import ReactMemo from "./ReactMemo";
 
 export default function App() {
   return (
@@ -12,4 +11,5 @@ export default function App() {
     </div>
   );
 }
+
 
